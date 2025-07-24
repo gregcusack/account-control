@@ -12,7 +12,8 @@ fn main() {
     let rpc = RpcClient::new("http://localhost:8899".to_string());
 
     let payer = read_keypair_file("config-authority.json").unwrap();
-    let config_keypair = read_keypair_file("gossip-weighting-config-account.json").unwrap();
+    // let config_keypair = read_keypair_file("gossip-weighting-config-account.json").unwrap();
+    let config_keypair = read_keypair_file("GrEGgZ5gBXyfyomLPruuvC6a5KXViq445xuhnHWFoTAN.json").unwrap();
 
     let program_id = Pubkey::from_str("2dGCYowSix7WWkDUgcxAxyazNkCBZAfrCUxZUGAsTyXh").unwrap();
 

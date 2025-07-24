@@ -7,8 +7,6 @@ edition = "2021"
 bincode = { workspace = true }
 log = { workspace = true }
 serde = { workspace = true }
-serde_derive = { workspace = true }
-serde_json = { workspace = true }
 solana-client = "2.2.0"
 solana-instruction = "2.2.0"
 solana-keypair = "2.2.0"
@@ -17,9 +15,7 @@ solana-signature = "2.2.0"
 solana-transaction = "2.2.0"
 solana-pubkey = "2.2.0"
 solana-system-interface = "1.0"
-
 solana-account-info = { workspace = true }
-
 
 [[bin]]
 name = "push-new-weight-config"

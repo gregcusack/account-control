@@ -6,8 +6,6 @@ edition = "2021"
 [dependencies]
 bincode = { workspace = true }
 serde = { workspace = true }
-serde_derive = { workspace = true }
-serde_json = { workspace = true }
 solana-account-info = { workspace = true }
 solana-program = { workspace = true }
 

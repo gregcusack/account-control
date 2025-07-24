@@ -1,5 +1,5 @@
 use {
-    serde_derive::{Deserialize, Serialize},
+    serde::{Deserialize, Serialize},
     solana_account_info::{next_account_info, AccountInfo},
     solana_program::{
         entrypoint,
@@ -40,10 +40,10 @@ pub fn process_instruction(
     }
 
     // Deserialize JSON instruction data
-    let cfg: WeightingConfig = serde_json::from_slice(input)
+    let cfg: WeightingConfig = bincode::deserialize(input)
         .map_err(|_| ProgramError::InvalidInstructionData)?;
 
-    let encoded = serde_json::to_vec(&cfg).map_err(|_| ProgramError::InvalidInstructionData)?;
+    let encoded = bincode::serialize(&cfg).map_err(|_| ProgramError::InvalidInstructionData)?;
 
     let dst = &mut config_account.data.borrow_mut()[..];
     if encoded.len() > dst.len() {

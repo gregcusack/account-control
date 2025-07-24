@@ -1,5 +1,9 @@
 [workspace]
-members = ["weighting-config", "create-config-account", "push-new-weight-config"]
+members = [
+    "create-config-account", 
+    "push-new-weight-config", 
+    "update-config"
+]
 resolver = "2"
 
 [workspace.dependencies]

@@ -23,7 +23,7 @@ fn main() {
     // === Inputs ===
     let rpc_url = "http://localhost:8899";
     let program_id = Pubkey::from_str("2dGCYowSix7WWkDUgcxAxyazNkCBZAfrCUxZUGAsTyXh").unwrap();
-    let config_account = read_keypair_file("gossip-weighting-config-account.json")
+    let config_account = read_keypair_file("GrEGgZ5gBXyfyomLPruuvC6a5KXViq445xuhnHWFoTAN.json")
         .expect("Failed to load config account keypair")
         .pubkey();
     let authority = read_keypair_file("config-authority.json").expect("Failed to load authority");
@@ -31,9 +31,9 @@ fn main() {
     
     let config = WeightingConfig {
         weighting_mode: 0,
-        tc_ms: 30000,
+        tc_ms: 50000,
     };
-    let data = serde_json::to_vec(&config).expect("Failed to serialize config");
+    let data = bincode::serialize(&config).expect("Failed to serialize config");
     // let data = read("weighting_config.bin").expect("Failed to read weighting_config.bin");
 
     // === Build instruction ===
