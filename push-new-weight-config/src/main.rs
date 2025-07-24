@@ -39,7 +39,7 @@ struct Commandline {
     #[arg(long, default_value = "config-authority.json")]
     payer_keypair: String,
 
-    #[arg(long, default_value = "GrEGgZ5gBXyfyomLPruuvC6a5KXViq445xuhnHWFoTAN.json")]
+    #[arg(long, default_value = "gossip-weighting-config-account.json")]
     storage_holder_kp: String,
 }
 
